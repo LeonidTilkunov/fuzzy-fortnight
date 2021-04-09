@@ -1,7 +1,6 @@
 package transport
 
 import (
-	"fmt"
 	"github.com/gorilla/mux"
 	log "github.com/sirupsen/logrus"
 	"net/http"
@@ -26,6 +25,6 @@ func logMiddleware(h http.Handler) http.Handler {
 	})
 }
 
-func health(w http.ResponseWriter, _ *http.Request) {
-	fmt.Fprint(w, "200")
+func health(_ http.ResponseWriter, _ *http.Request) {
+
 }
