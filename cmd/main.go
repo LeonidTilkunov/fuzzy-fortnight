@@ -1,4 +1,4 @@
-package cmd
+package main
 
 import (
 	"awesomeProject/transport"
@@ -8,12 +8,9 @@ import (
 	"os"
 )
 
-const serverUrl = ":8000"
-
-func main (){
+func main() {
 	log.SetFormatter(&log.JSONFormatter{})
 	log.SetOutput(os.Stdout)
-	log.WithFields(log.Fields{"url": serverUrl}).Info("starting the server")
 	r := transport.Router()
-	fmt.Println(http.ListenAndServe("8000",r))
+	fmt.Println(http.ListenAndServe(":"+os.Getenv("POST"), r))
 }
