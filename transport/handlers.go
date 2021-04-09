@@ -11,7 +11,7 @@ func Router() http.Handler {
 	r := mux.NewRouter()
 	s := r.PathPrefix("/api/v1").Subrouter()
 	s.HandleFunc("/health", health).Methods(http.MethodHead)
-	return logMiddleware(r)
+	return r
 }
 
 func logMiddleware(h http.Handler) http.Handler {
