@@ -12,5 +12,5 @@ func main() {
 	log.SetFormatter(&log.JSONFormatter{})
 	log.SetOutput(os.Stdout)
 	r := transport.Router()
-	fmt.Println(http.ListenAndServe(":"+os.Getenv("POST"), r))
+	fmt.Println(http.ListenAndServe(":"+os.Getenv("PORT"), r))
 }
