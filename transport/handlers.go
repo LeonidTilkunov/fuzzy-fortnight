@@ -27,5 +27,5 @@ func logMiddleware(h http.Handler) http.Handler {
 }
 
 func health(w http.ResponseWriter, _ *http.Request) {
-	fmt.Fprint(w, "ok")
+	fmt.Fprintf(w, "ok")
 }
